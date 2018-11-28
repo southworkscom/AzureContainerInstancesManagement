@@ -37,6 +37,7 @@
                     ],
                     "properties": {
                         "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageName')), '2015-05-01-preview').key1)]",
+                        "AzureWebJobsSecretStorageType": "Files",
                         "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageName')), '2015-05-01-preview').key1)]",
                         "FUNCTIONS_EXTENSION_VERSION": "~1",
                         "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
