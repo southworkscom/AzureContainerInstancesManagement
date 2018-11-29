@@ -50,7 +50,7 @@
                         "ACI_SET_STATE_URL": "[listsecrets(resourceId('Microsoft.Web/sites/functions', parameters('functionName'), 'ACISetState'),'2015-08-01').trigger_url]",
                         "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "[concat('DefaultEndpointsProtocol=https;AccountName=', parameters('storageName'), ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageName')), '2015-05-01-preview').key1)]",
                         "WEBSITE_CONTENTSHARE": "[toLower(parameters('functionName'))]",
-                        "CONTAINER_GROUP_TEMPLATE":"",
+                        "CONTAINER_GROUP_TEMPLATE":"{ 'resourceGroup': 'ACIrg', 'containerGroupName': 'testservergroup', 'containerGroup' : { 'location': 'westus', 'containers': [{ 'name': 'testserver', 'image': 'dgkanatsios/simpleapp', 'environmentVariables': [{ 'name':'envName', 'value':'envValue' }], 'resources': { 'requests': { 'memoryInGB': 0.5, 'cpu': 1 } }, 'ports': [{ 'protocol': 'TCP', 'port': 80 }] }], 'ipAddress': { 'ports': [{ 'protocol': 'TCP', 'port': 80 }], 'type': 'Public' }, 'osType': 'Linux' } }",
                         "AUTOSCALER_MINIMUM_INSTANCES":"1",
                         "AUTOSCALER_MAXIMUM_INSTANCES":"10",
                         "AUTOSCALER_SCALE_OUT_THRESHOLD":"0.8",
