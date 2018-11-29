@@ -15,7 +15,7 @@
         },
         "repoUrl": {
             "type": "string",
-            "defaultValue": "https://github.com/dgkanatsios/AzureContainerInstancesManagement"
+            "defaultValue": "https://github.com/southworkscom/AzureContainerInstancesManagement"
         },
         "branch":{
             "type": "string",
